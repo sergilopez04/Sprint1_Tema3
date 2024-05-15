@@ -1,25 +1,20 @@
 <?php
 
 $words = ["albero", "macchina", "borraccia", "zaino"];
-$letter = 'a';
+$letter = 's';
 $result = "";
 
 $result = (isThatLetterIn($words, $letter)) ? "La lletra '$letter' hi és i està a la posició $result del array.\n" 
 : "La lletra introduïda no hi és :(\n";
 echo $result;
 
-function isThatLetterIn(array $words, string $letter): bool{
-    $result = false;
-    $counter = 0;
+function isThatLetterIn(array $words, string $letter): bool {
     foreach ($words as $word) {
-        $word = $words[$counter];
-        $result = strpos($word, $letter);
-
-        if ($result !== false){
-            $result = true;
+        if (strpos($word, $letter) !== false) {
+            return true;
         }
     }
-    return $result;
+    return false;
 }
 
 ?>

@@ -7,11 +7,11 @@ $result = "";
 
 function isThatLetterIn(array $words, string $letter): bool {
     foreach ($words as $word) {
-        if (strpos($word, $letter) !== false) {
-            return true;
+        if (stripos($word, $letter) === false) {
+            return false;
         }
     }
-    return false;
+    return true;
 }
 
 $result = (isThatLetterIn($words, $letter)) ? "La lletra '$letter' hi és!\n" 
